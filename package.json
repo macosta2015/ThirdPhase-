@@ -8,7 +8,7 @@
     "test2": "node mouse.js",
     "test3": "node test2.js",
     "test4": "node test3.js",
-    "test5": "mouseandcode.js"
+    "test5": "node mouseandcode.js"
   },
   "repository": {
     "type": "git",
