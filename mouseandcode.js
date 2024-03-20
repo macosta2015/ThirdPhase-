@@ -10,7 +10,6 @@ require('dotenv').config(); // Load environment variables from .env file
             userDataDir: '/Users/marioacosta/Library/Application Support/Google/Chrome/Profile 1' // Path to your user data directory
         });
 
-
         console.log('Opening new page...');
         const newPage = await browser.newPage();
 
@@ -174,8 +173,18 @@ require('dotenv').config(); // Load environment variables from .env file
         console.log('Taking a screenshot...');
         await newPage.screenshot({ path: 'form_submission.png' });
 
-        console.log('Waiting for 5 seconds after navigation...');
-        await new Promise(resolve => setTimeout(resolve, 50000));
+        // Capture mouse movements and log coordinates
+        await newPage.evaluate(() => {
+            document.addEventListener('mousemove', (event) => {
+                console.log(`Mouse coordinates: X = ${event.clientX}, Y = ${event.clientY}`);
+            });
+        });
+
+        // Keep the page open for further interaction or observation
+        console.log('Move the mouse over the page to see the coordinates...');
+
+        // Prevent the script from exiting
+        await new Promise(() => { });
 
         console.log('Script completed successfully.');
     } catch (error) {
