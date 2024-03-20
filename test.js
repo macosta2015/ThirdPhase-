@@ -5,6 +5,7 @@ require('dotenv').config(); // Load environment variables from .env file
     try {
         console.log('Launching browser...');
         const browser = await puppeteer.launch({
+            defaultViewport: { width: 800, height: 800 }, // Initial size of the browser window
             headless: false, // Launch Chrome with visible browser window
             userDataDir: '/Users/marioacosta/Library/Application Support/Google/Chrome/Profile 1' // Path to your user data directory
         });
@@ -174,9 +175,6 @@ require('dotenv').config(); // Load environment variables from .env file
 
         console.log('Waiting for 5 seconds after navigation...');
         await new Promise(resolve => setTimeout(resolve, 50000));
-
-        // console.log('Closing the browser...');
-        // await browser.close();
 
         console.log('Script completed successfully.');
     } catch (error) {
