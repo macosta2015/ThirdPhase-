@@ -1,0 +1,29 @@
+{
+  "name": "puppeteer_js-",
+  "version": "1.0.0",
+  "description": "Automated software testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "test2": "node mouse.js",
+    "test3": "node test2.js",
+    "test4": "node test3.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macosta2015/Puppeteer_js-.git"
+  },
+  "author": "Mario Acosta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macosta2015/Puppeteer_js-/issues"
+  },
+  "homepage": "https://github.com/macosta2015/Puppeteer_js-#readme",
+  "dependencies": {
+    "cypress": "^13.6.6",
+    "dotenv": "^16.4.5",
+    "prettier": "^3.2.5",
+    "puppeteer": "^22.4.1",
+    "webdriverio": "^8.34.0"
+  }
+}
